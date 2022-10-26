@@ -2,9 +2,9 @@
 웹사이트에 구현된 12개 문항을 이진 선택하여 사용자에게 MBTI 유형을 알려주는 사이트
 
 ## Installation
-'''bash
-git clone 
-'''
+```bash
+git clone https://github.com/kw-ic-web/assignment-1-mbti-a-young-kim.git
+```
 ## Environment
   html  
   css  
