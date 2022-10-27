@@ -6,6 +6,7 @@
     <title>MBTI TEST</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link href="../style.css" rel="stylesheet">
+    <script src="../app.js"></script>
   </head>
   <body>
     <!-- 상단 바 생성 -->
@@ -37,13 +38,13 @@
             </div>
             <div class="row form-check px-5">
               <div class="col">
-                <input class="form-check-input" type="radio" name="question9" id="question9_1">
+                <input class="form-check-input" type="radio" name="question9" id="question9_1" onclick="getAnswer(event)">
                 <label class="form-check-label" for="question9_1">
                   내 생각과 논리를 증명해야해
                 </label>
               </div>
               <div class="col">
-                <input class="form-check-input" type="radio" name="question9" id="question9_2">
+                <input class="form-check-input" type="radio" name="question9" id="question9_2" onclick="getAnswer(event)">
                 <label class="form-check-label" for="question9_2">
                   내 의견을 상대방이 기분 나쁘지 않게 전달해야해
                 </label>
@@ -57,13 +58,13 @@
             </div>
             <div class="row form-check px-5">
               <div class="col">
-                <input class="form-check-input" type="radio" name="question10" id="question10_1">
+                <input class="form-check-input" type="radio" name="question10" id="question10_1" onclick="getAnswer(event)">
                 <label class="form-check-label" for="question10_1">
                   더 혼나지 않게 좋은 정보들을 전달해준다.
                 </label>
               </div>
               <div class="col">
-                <input class="form-check-input" type="radio" name="question10" id="question10_2">
+                <input class="form-check-input" type="radio" name="question10" id="question10_2" onclick="getAnswer(event)">
                 <label class="form-check-label" for="question10_2">
                   동료를 위로해준다
                 </label>
@@ -77,13 +78,13 @@
             </div>
             <div class="row form-check px-5">
               <div class="col">
-                <input class="form-check-input" type="radio" name="question11" id="question11_1">
+                <input class="form-check-input" type="radio" name="question11" id="question11_1" onclick="getAnswer(event)">
                 <label class="form-check-label" for="question11_1">
                   나도 궁금한 것을 이것저것 물어본다
                 </label>
               </div>
               <div class="col">
-                <input class="form-check-input" type="radio" name="question11" id="question11_2">
+                <input class="form-check-input" type="radio" name="question11" id="question11_2" onclick="getAnswer(event)">
                 <label class="form-check-label" for="question11_2">
                   대답은 하지만 사실 부담스럽다
                 </label>
@@ -97,13 +98,13 @@
             </div>
             <div class="row form-check px-5">
               <div class="col">
-                <input class="form-check-input" type="radio" name="question12" id="question12_1">
+                <input class="form-check-input" type="radio" name="question12" id="question12_1" onclick="getAnswer(event)">
                 <label class="form-check-label" for="question12_1">
                   내일 할 일을 미리 정리해둔다
                 </label>
               </div>
               <div class="col">
-                <input class="form-check-input" type="radio" name="question12" id="question12_2">
+                <input class="form-check-input" type="radio" name="question12" id="question12_2" onclick="getAnswer(event)">
                 <label class="form-check-label" for="question12_2">
                   자리만 정리하고 떠난다
                 </label>
