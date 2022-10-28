@@ -17,4 +17,12 @@ router.get('/', function(req, res){
     });
 });
 
+// post : answer of 9~12 questions 
+router.post('/', function(req, res){
+    let body = req.body;
+    console.log(body);
+    
+    res.redirect("second");
+});
+
 export default router;

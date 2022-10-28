@@ -1,4 +1,7 @@
 import express from 'express';
+import http from 'http';
+import path from 'path';
+
 
 // get page
 import indexRouter from './routes/index.js';
@@ -8,8 +11,13 @@ import thirdRouter from './routes/third.js';
 const app = express();
 app.set('port', process.env.PORT || 3000);
 
-// css file
-app.use(express.static('public'));
+// pulic static
+app.use(express.static('public/stylesheets'));
+app.use(express.static('public/javascripts'));
+
+// post erased
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 app.use('/', indexRouter);
 app.use('/second', secondRouter);
