@@ -22,7 +22,8 @@ router.post('/', function(req, res){
     let body = req.body;
     console.log(body);
     
-    res.redirect("second");
+    res.redirect("/");
+    
 });
 
 export default router;

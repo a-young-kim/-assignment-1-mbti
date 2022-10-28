@@ -1,6 +1,6 @@
 
 
-// 
+// check all question
 function is_Checked(){
     
     let elements = document.getElementsByClassName('form-check-input');
@@ -26,8 +26,39 @@ function is_Checked(){
     return true;
 }
 
+// saved in sessionStorage
 function get_Answer(event){
-    // saved in sessionStorage
     window.sessionStorage.setItem(event.target.name, event.target.id.split('_')[1]);
-    //console.log(answer);
 }
+
+// move back
+function move_back(){
+    console.log("back");
+    history.back();
+}
+
+// 
+window.onload = function(){
+    let elements = document.getElementsByClassName('form-check-input');
+
+    if(elements == null) return;
+
+    let nameOfElement = new Set();
+
+    // check questions name
+    for(let i = 0; i < elements.length; i++){
+        if(elements[i]){
+            nameOfElement.add(elements[i].name);
+        }
+    }
+    
+    nameOfElement = Array.from(nameOfElement);
+
+    // if data in session --> radio button checked
+    for(let i = 0; i<nameOfElement.length; i++){
+        let answer = window.sessionStorage.getItem(nameOfElement[i]);
+        if(answer != null){
+            document.getElementById(nameOfElement[i]+'_'+answer).checked = true;
+        }
+    }
+};
