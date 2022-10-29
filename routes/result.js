@@ -18,6 +18,7 @@ router.get('/', function(req, res){
 });
 
 router.get('/1', function(req, res){
+    
     yours = "";
     get_MBTI();
 
@@ -40,6 +41,8 @@ const mbti_Data={
     question12:['J', 'P']    
 };
 
+let yours = "";
+
 let mbti = {
     E:0,
     I:0,
@@ -51,10 +54,10 @@ let mbti = {
     P:0
 };
 
-let yours = "";
-
 function get_MBTI(){
+
     const name = 'question';
+    let check = 0 ;
 
     for(let i = 1; i< 13; i++){
         let question = name+i;
@@ -62,22 +65,29 @@ function get_MBTI(){
         let answer = parseInt(serverMBTI[question]);
         let find = mbti_Data[question][answer-1];
 
-        mbti[find] = mbti[find] + 1;
+        if(find != undefined){
+            mbti[find] = mbti[find] + 1;  
+        }
+
+        else{
+            check = check + 1;
+        }
     }
-   
-    // find yours
-    if(mbti.E > mbti.I) yours = yours + 'E';
-    else yours = yours + 'I';
+    
+    if(check == 0){
+        // find yours
+        if(mbti.E > mbti.I) yours = yours + 'E';
+        else yours = yours + 'I';
 
-    if(mbti.S > mbti.N) yours = yours + 'S';
-    else yours = yours + 'N';
+        if(mbti.S > mbti.N) yours = yours + 'S';
+        else yours = yours + 'N';
 
-    if(mbti.T > mbti.F) yours = yours + 'T';
-    else yours = yours + 'F';
+        if(mbti.T > mbti.F) yours = yours + 'T';
+        else yours = yours + 'F';
 
-    if(mbti.P > mbti.J) yours = yours + 'P';
-    else yours = yours + 'J';
-
+        if(mbti.P > mbti.J) yours = yours + 'P';
+        else yours = yours + 'J';
+    }
     console.log(yours);
 }
 export default router;
