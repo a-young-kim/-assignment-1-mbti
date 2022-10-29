@@ -20,10 +20,13 @@ router.get('/', function(req, res){
 // post : answer of 9~12 questions 
 router.post('/', function(req, res){
     let body = req.body;
-    console.log(body);
-    
-    res.redirect("/");
-    
+
+    serverMBTI.question9 = body.question9.split('_')[1];
+    serverMBTI.question10 = body.question10.split('_')[1];
+    serverMBTI.question11 = body.question11.split('_')[1];
+    serverMBTI.question12 = body.question12.split('_')[1];
+
+    res.redirect("result");
 });
 
 export default router;

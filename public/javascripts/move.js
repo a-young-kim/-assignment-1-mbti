@@ -35,6 +35,9 @@ function get_Answer(event){
         let valueNow = processbar.ariaValueNow;
 
         valueNow = parseInt(valueNow) + 100/12;
+        if(valueNow > 98){
+            valueNow = 100;
+        }
         processbar.style.width = valueNow+'%';
         processbar.ariaValueNow = valueNow;
     }
